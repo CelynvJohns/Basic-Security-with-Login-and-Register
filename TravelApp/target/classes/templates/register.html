@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        
+        body{
+            background-color: #83b7ee;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            position: absolute;
+            width: 300px;
+            padding: 40px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 2px solid red;
+            text-align: center;
+            background-color: #191919;
+            text-align: center;
+            
+        }
+        h1{
+            
+            text-transform: uppercase;
+            font-weight: 500;
+            color: beige;
+            margin-bottom: 50px;
+        }
+        .container input[type="Name"],.container input[type="Password"]{
+            border: 0;
+            background: none;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: beige;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+        .container input[type="Name"]:focus,.container input[type="Password"]:focus{
+            width: 280px;
+            border-color: #2ecc71;
+        }
+        .container input[type="submit"]
+        {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            border: 2px solid  #2ecc71;;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: beige;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .container input[type="submit"]:hover{
+            background: #2ecc71;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="/register" method="post" th:object="${registerRequest}">
+            <input type="text" name="username" placeholder="UserName"><br>
+            <input type="text" name="password" placeholder="Password"><br>
+            <input type="submit" name="register" value="register">
+            <a href="/login">Already a User? Login now</a>
+            <a href="/index">Continue as Guest</a>
+        </form>
+    </div>
+    
+</body>
+</html>
